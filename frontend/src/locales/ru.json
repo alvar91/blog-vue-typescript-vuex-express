@@ -1,5 +1,5 @@
 {
-  "message": "Привет !!!",
+  "empty-page":"Пока здесь пусто",
   "menu":{
     "home":"Главная",
     "info":"Инфо",
@@ -7,5 +7,12 @@
   },
   "buttons":{
     "button-logout":"Выход"
+  },
+  "footer-text":"Freebie разработано Kishore для Project365.Design",
+  "article":{
+    "destination-title":"Место",
+    "added-title":"Автор",
+    "view-more-button": "Узнать больше",
+    "back-button": "Назад к главной"
   }
 }
