@@ -1,26 +1,25 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    <!-- <div>
-      <p>
-        If Element is successfully added to this project, you'll see an
-        <code v-text="'<el-button>'"></code>
-        below
-      </p>
-      <el-button>el-button</el-button>
-    </div> -->
+    <p>{{ $t('message') }}</p>
+    <p>{{ $t('hello', { msg: 'hello' }) }}</p>
+    <p>{{ $t('hello', ['My name','hello']) }}</p>
+    <p>{{ $tc('car', 1) }}</p>
+    <p>{{ $tc('car', 2) }}</p>
+
+    <p>{{ $tc('apple', 0) }}</p>
+    <p>{{ $tc('apple', 1) }}</p>
+    <p>{{ $tc('apple', 10, { count: testCount }) }}</p>
+    <p>{{ $d(new Date(), 'short') }}</p>
+    <p>{{ $n(100, 'currency') }}</p>
+
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
+<script lang="ts">
+import { Vue, Component } from "vue-property-decorator";
 
-export default {
-  name: "Home",
-  components: {
-    // HelloWorld
-  }
+@Component({})
+export default class Home extends Vue {
+  testCount = 20;
 };
 </script>

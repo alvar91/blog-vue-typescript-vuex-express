@@ -48,7 +48,7 @@ export default class LoginPage extends Vue {
             const token = response.data;
             localStorage.setItem("currentUser", JSON.stringify(token));
             console.log(this.$router);
-            this.$router.push({ name: 'Home' });
+            this.$router.push({ name: "Home" });
           })
           .catch(error => {
             console.log(error);

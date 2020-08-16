@@ -1,0 +1,11 @@
+{
+  "message": "Привет !!!",
+  "menu":{
+    "home":"Главная",
+    "info":"Инфо",
+    "about":"О нас"
+  },
+  "buttons":{
+    "button-logout":"Выход"
+  }
+}

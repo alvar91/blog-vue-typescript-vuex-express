@@ -11,6 +11,9 @@ export default class HeaderComponent extends Vue {
   menuNav() {
     this.menuIsActive = !this.menuIsActive;
   }
+  switchLang() {
+    this.$i18n.locale = this.lang;
+  }
 }
 </script>
 
@@ -33,20 +36,20 @@ export default class HeaderComponent extends Vue {
           v-bind:class="{ '': !menuIsActive, isOpen: menuIsActive }"
         >
           <el-menu-item index="1">
-            <router-link to="/">Home</router-link>
+            <router-link to="/">{{$t("menu.home")}}</router-link>
           </el-menu-item>
-          <el-menu-item index="2" disabled>Info</el-menu-item>
+          <el-menu-item index="2" disabled>{{$t("menu.info")}}</el-menu-item>
           <el-menu-item index="3">
-            <router-link to="/about">About</router-link>
+            <router-link to="/about">{{$t("menu.about")}}</router-link>
           </el-menu-item>
         </el-menu>
-        <el-radio-group v-model="lang" size="mini">
+        <el-radio-group :change="switchLang()" v-model="lang" size="mini">
           <el-radio-button label="ru">Ru</el-radio-button>
           <el-radio-button label="en">En</el-radio-button>
         </el-radio-group>
         <el-button class="logout-btn" size="mini" type="info"
           ><i class="el-icon-toilet-paper"></i>
-          <span class="text-block">Logout</span></el-button
+          <span class="text-block">{{$t("buttons.button-logout")}}</span></el-button
         >
       </el-col>
     </el-row>

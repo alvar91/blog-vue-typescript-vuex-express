@@ -1,0 +1,15 @@
+{
+  "message": "hello i18n !!",
+  "hello": "{msg} world",
+  "hello2": "{1} world",
+  "car": "car | cars",
+  "apple": "no apples | one apple | {count} apples",
+  "menu":{
+    "home":"Home",
+    "info":"Info",
+    "about":"About"
+  },
+  "buttons":{
+    "button-logout":"Logout"
+  }
+}
