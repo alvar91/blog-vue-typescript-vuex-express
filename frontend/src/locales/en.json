@@ -14,5 +14,7 @@
     "added-title":"Added",
     "view-more-button": "More",
     "back-button": "Back to atricles"
-  }
+  },
+  "search":"Search",
+  "tooltip":"Change view"
 }
