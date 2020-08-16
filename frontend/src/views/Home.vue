@@ -44,11 +44,15 @@ const Articles = namespace('Articles');
 })
 export default class Home extends Vue {
   @Articles.State articles: any;
+  @Articles.Action fetchApi: any;
   searchValue: string = "";
   viewMode: boolean = true;
 
   changeView() {
     this.viewMode = !this.viewMode;
+  }
+  created() {
+    this.fetchApi();
   }
 }
 </script>
