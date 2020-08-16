@@ -2,7 +2,8 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
 import About from "../views/About.vue";
-import LoginPage from "../views/LoginPage.vue"
+import LoginPage from "../views/LoginPage.vue";
+import PageNotFound from "../views/PageNotFound.vue";
 
 Vue.use(VueRouter);
 
@@ -23,7 +24,12 @@ const routes: Array<RouteConfig> = [
     name: "About",
     component: About,
     meta: { requiresAuth: true }
-  }
+  },
+  {
+    path: "*",
+    name: "404",
+    component: PageNotFound,
+  },
 ];
 
 const router = new VueRouter({
