@@ -82,6 +82,7 @@ export default class LoginPage extends Vue {
         >
           <el-form-item label="Email" prop="email">
             <el-input
+              data-test="email"
               type="text"
               v-model="ruleForm.email"
               autocomplete="off"
@@ -89,16 +90,22 @@ export default class LoginPage extends Vue {
           </el-form-item>
           <el-form-item label="Password" prop="password">
             <el-input
+              data-test="password"
               type="password"
               v-model="ruleForm.password"
               autocomplete="off"
             ></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="submitForm('ruleForm')"
+            <el-button
+              data-test="submit"
+              type="primary"
+              @click="submitForm('ruleForm')"
               >Submit</el-button
             >
-            <el-button @click="resetForm('ruleForm')">Reset</el-button>
+            <el-button data-test="reset" @click="resetForm('ruleForm')"
+              >Reset</el-button
+            >
           </el-form-item>
         </el-form>
       </div>

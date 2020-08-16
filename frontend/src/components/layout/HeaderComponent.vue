@@ -7,6 +7,10 @@ export default class HeaderComponent extends Vue {
   menuIsActive: boolean = false;
 
   lang: string = "en";
+  logout() {
+    window.localStorage.clear();
+    this.$router.push("Login");
+  }
 
   menuNav() {
     this.menuIsActive = !this.menuIsActive;
@@ -36,20 +40,31 @@ export default class HeaderComponent extends Vue {
           v-bind:class="{ '': !menuIsActive, isOpen: menuIsActive }"
         >
           <el-menu-item index="1">
-            <router-link to="/">{{$t("menu.home")}}</router-link>
+            <router-link data-test="home" to="/">{{
+              $t("menu.home")
+            }}</router-link>
           </el-menu-item>
-          <el-menu-item index="2" disabled>{{$t("menu.info")}}</el-menu-item>
+          <el-menu-item index="2" disabled>{{ $t("menu.info") }}</el-menu-item>
           <el-menu-item index="3">
-            <router-link to="/about">{{$t("menu.about")}}</router-link>
+            <router-link data-test="about" to="/about">{{
+              $t("menu.about")
+            }}</router-link>
           </el-menu-item>
         </el-menu>
         <el-radio-group :change="switchLang()" v-model="lang" size="mini">
-          <el-radio-button label="ru">Ru</el-radio-button>
-          <el-radio-button label="en">En</el-radio-button>
+          <el-radio-button data-test="ru" label="ru">Ru</el-radio-button>
+          <el-radio-button data-test="en" label="en">En</el-radio-button>
         </el-radio-group>
-        <el-button class="logout-btn" size="mini" type="info"
+        <el-button
+          data-test="logout"
+          @click="logout"
+          class="logout-btn"
+          size="mini"
+          type="info"
           ><i class="el-icon-toilet-paper"></i>
-          <span class="text-block">{{$t("buttons.button-logout")}}</span></el-button
+          <span class="text-block">{{
+            $t("buttons.button-logout")
+          }}</span></el-button
         >
       </el-col>
     </el-row>
