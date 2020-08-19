@@ -2,4 +2,4 @@
 
 ## test email: test@gmail.com
 ## test password: 123456
-[Demo](https://angry-fermat-df3e8c.netlify.app/login)
+[Demo](https://angry-fermat-df3e8c.netlify.app/)
